@@ -6,16 +6,13 @@ def get_expression():
     global expression
     return expression
 
-
 def get_result():
     global result
     return result
 
-
 def set_expression(equation):
     global expression
     expression = equation
-
 
 def pars_expression():
     global expression

@@ -31,7 +31,6 @@ def set_operation(oper):
     global operation
     operation = oper
 
-
 def addition():
     global first_number
     global second_number
