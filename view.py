@@ -1,3 +1,5 @@
+import model
+
 
 def input_number() -> int:
     while True:
@@ -18,3 +20,9 @@ def input_operation():
 
 def print_to_console(value_text):
     print(value_text)
+
+def log_off():
+    print((f'Очень хорошо! Результат вычислений = {model.get_result()}'))
+
+def division_by_zero():
+    print('На ноль делить нельзя!')

@@ -48,9 +48,16 @@ def multiplication():
     global second_number
     global result
     result = first_number * second_number
+    if result == int(result):
+        result = int(result)
+
+
 
 def division():
     global first_number
     global second_number
     global result
-    result = first_number / second_number
+    if first_number % second_number == 0:
+        result = int(first_number / second_number)
+    else:
+        result = first_number / second_number
