@@ -1,9 +1,21 @@
+import parser
 import view
 import model
 
-def input_first():
-    number = view.input_number()
-    model.set_first(number)
+def check_enter():
+    enter = view.input_enter()
+    if enter.isdigit():
+        model.set_first(enter)
+    else:
+        parser.set_expression(enter)
+
+    #     for item in enter:
+    #     if item.isdigit() and '+' or '-' or '*' or '/' in enter:
+    #         model.set_expression(enter)
+    # else:
+    #     print('Ошибочка вышла!')
+
+    # СДЕЛАТЬ ПРОВЕРКУ НА ДУРАКА!
 
 def input_second():
     while True:
@@ -36,11 +48,19 @@ def solution():
     model.set_first(model.get_result())
 
 def start():
-    input_first()
-    while True:
-        input_operation()
-        if model.get_operation() == '=':
-            view.log_off()
-            break
-        input_second()
-        solution()
+    check_enter()
+    if model.get_first():
+        while True:
+            input_operation()
+            if model.get_operation() == '=':
+                print(f'Очень хорошо! Результат кнопочного калькулятора = {model.get_result()}')
+                break
+            input_second()
+            solution()
+    else:
+        parser.pars_expression()
+        print(f'Очень хорошо! Результат строкового калькулятора = {parser.get_result()}')
+
+
+
+

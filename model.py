@@ -31,23 +31,24 @@ def set_operation(oper):
     global operation
     operation = oper
 
+
 def addition():
     global first_number
     global second_number
     global result
-    result = first_number + second_number
+    result = int(first_number) + second_number
 
 def difference():
     global first_number
     global second_number
     global result
-    result = first_number - second_number
+    result = int(first_number) - second_number
 
 def multiplication():
     global first_number
     global second_number
     global result
-    result = first_number * second_number
+    result = int(first_number) * second_number
     if result == int(result):
         result = int(result)
 
@@ -55,7 +56,7 @@ def division():
     global first_number
     global second_number
     global result
-    if first_number % second_number == 0:
-        result = int(first_number / second_number)
-    else:
-        result = first_number / second_number
+    result = int(first_number) / second_number
+    if result == int(result):
+        result = int(result)
+
