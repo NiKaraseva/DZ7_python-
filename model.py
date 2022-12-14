@@ -51,8 +51,6 @@ def multiplication():
     if result == int(result):
         result = int(result)
 
-
-
 def division():
     global first_number
     global second_number
