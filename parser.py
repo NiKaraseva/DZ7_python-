@@ -14,6 +14,14 @@ def set_expression(equation):
     global expression
     expression = equation
 
+# def check_expression():
+#     global expression
+#     for item in expression:
+#         if item.isdigit() and '+' or '-' or '*' or '/' in expression:
+#             set_expression(expression)
+#         else:
+#             print('Ошибочка вышла!')
+
 def pars_expression():
     global expression
     global result

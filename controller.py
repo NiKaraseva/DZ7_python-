@@ -9,13 +9,13 @@ def check_enter():
     else:
         parser.set_expression(enter)
 
-    #     for item in enter:
-    #     if item.isdigit() and '+' or '-' or '*' or '/' in enter:
-    #         model.set_expression(enter)
-    # else:
-    #     print('Ошибочка вышла!')
-
-    # СДЕЛАТЬ ПРОВЕРКУ НА ДУРАКА!
+def check_expression():
+    equation = parser.get_expression()
+    for item in equation:
+        if item.isdigit() and '+' or '-' or '*' or '/' in equation:
+            parser.set_expression(equation)
+        else:
+            print('Ошибочка вышла!')
 
 def input_second():
     while True:
@@ -58,6 +58,7 @@ def start():
             input_second()
             solution()
     else:
+        check_expression()
         parser.pars_expression()
         print(f'Очень хорошо! Результат строкового калькулятора = {parser.get_result()}')
 
