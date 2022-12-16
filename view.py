@@ -22,6 +22,11 @@ def input_operation():
 def print_to_console(value_text):
     print(value_text)
 
+def log_off(result):
+    print(f'Очень хорошо! Ваш результат = {result}')
+
+def check_equation():
+    print('Ошибочка вышла!')
 
 def division_by_zero():
     print('На ноль делить нельзя!')

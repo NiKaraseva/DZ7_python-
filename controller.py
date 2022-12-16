@@ -12,10 +12,10 @@ def check_enter():
 def check_expression():
     equation = parser.get_expression()
     for item in equation:
-        if item.isdigit() and '+' or '-' or '*' or '/' in equation:
+        if item.isdigit() or '+' or '-' or '*' or '/':
             parser.set_expression(equation)
         else:
-            print('Ошибочка вышла!')
+            return True
 
 def input_second():
     while True:
@@ -53,14 +53,15 @@ def start():
         while True:
             input_operation()
             if model.get_operation() == '=':
-                print(f'Очень хорошо! Результат кнопочного калькулятора = {model.get_result()}')
+                view.log_off(model.get_result())
                 break
             input_second()
             solution()
     else:
-        check_expression()
+        if check_expression():
+            view.check_equation()
         parser.pars_expression()
-        print(f'Очень хорошо! Результат строкового калькулятора = {parser.get_result()}')
+        view.log_off(*parser.get_result())
 
 
 
