@@ -11,12 +11,12 @@ def get_result():
     global result
     return result
 
-def set_expression(equation):
+def set_expression(equation): # записали выражение
     global expression
     expression = equation
 
 
-def pars_expression():
+def pars_expression(): # парсим и считаем выражение
     global expression
     global result
     string = expression
@@ -28,14 +28,19 @@ def pars_expression():
         i = 0
         while ('*' in result or '/' in result) and i < len(result):
             if result[i] == '*':
-                result[i - 1] = result[i-1] * result[i+1]
+                result[i - 1] = result[i - 1] * result[i + 1]
+                if result[i - 1] == int(result[i - 1]):
+                    result[i - 1] = int(result[i - 1])
                 result.pop(i)
                 result.pop(i)
 
             elif result[i] == '/':
-                result[i - 1] = result[i-1] / result[i+1]
+                result[i - 1] = result[i - 1] / result[i + 1]
                 result.pop(i)
                 result.pop(i)
+                if result[i - 1] == int(result[i - 1]):
+                    result[i - 1] = int(result[i - 1])
+
             else:
                 i += 1
 
@@ -52,5 +57,3 @@ def pars_expression():
             else:
                 i += 1
     return result
-
-

@@ -19,31 +19,31 @@ def get_result():
     global result
     return result
 
-def set_first(value):
+def set_first(value): # записали первое число
     global first_number
     first_number = value
 
-def set_second(value):
+def set_second(value): # записали втрое число
     global second_number
     second_number = value
 
-def set_operation(oper):
+def set_operation(oper): # записали оператор
     global operation
     operation = oper
 
-def addition():
+def addition(): # функция сложения
     global first_number
     global second_number
     global result
     result = int(first_number) + second_number
 
-def difference():
+def difference(): # функция вычитания
     global first_number
     global second_number
     global result
     result = int(first_number) - second_number
 
-def multiplication():
+def multiplication(): # функция умножения
     global first_number
     global second_number
     global result
@@ -51,7 +51,7 @@ def multiplication():
     if result == int(result):
         result = int(result)
 
-def division():
+def division(): # функция деления
     global first_number
     global second_number
     global result
